@@ -6,7 +6,11 @@
 <li>https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md</li>
 </ul>
 
+<p>Abrir terminal</p>
+
 ```
+cd ~
+sudo apt install -y git
 git clone https://github.com/tensorflow/tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models
@@ -27,13 +31,15 @@ pip3 install  pandas
 git clone https://github.com/cocodataset/cocoapi.git
 cd cocoapi/PythonAPI
 make
-cp -r pycocotools /home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/
+cp -r pycocotools /home/edee/tensorflow/models/research
+#cp -r pycocotools /home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/
 ```
 
 <h4>Install protoc</h4>
 
 ```
-cd /home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research
+#cd /home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research
+cd /home/edee/tensorflow/models/research
 protoc object_detection/protos/*.proto --python_out=.
 
 ```
@@ -43,7 +49,9 @@ protoc object_detection/protos/*.proto --python_out=.
 ```
 nano ~/.bashrc
 #TensorFlow - Adicionar na ultima linha
-export PYTHONPATH=$PYTHONPATH:/home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/:/home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:/home/edee/tensorflow/models/research/:/home/edee/tensorflow/models/research/slim
+
+#export PYTHONPATH=$PYTHONPATH:/home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/:/home/edee/EdeE/Processamento_Imagem/TF_github/tensorflow/models/research/slim
 source ~/.bashrc
 ```
 
